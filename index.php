@@ -1,14 +1,14 @@
-
 <?php
 
 require_once('classes/game.php');
 
 //this will store their information as they refresh the page
 session_start();
-
 //if they haven't started a game yet let's load one
-if (!isset($_SESSION['game']))
-	$_SESSION['game'] = new Game();
+if (!isset($_SESSION['game'])){
+		$_SESSION['game'] = new Game();
+}
+
 ?>
 
 <html>

@@ -1,9 +1,10 @@
 <?php
 
 require "bee.php";
-require "DroneBee.php";
-require "QueenBee.php";
-require "WorkerBee.php";
+require "droneBee.php";
+require "queenBee.php";
+require "workerBee.php";
+
 
 class Game{
 
@@ -12,12 +13,11 @@ class Game{
   private $console = "Welcome to the Bee game ! Punch Bees in the face to win";
 
   function Game(){
-    $this->bees = [];
-    $this->newGame();
+      $this->bees = [];
+      $this->newGame();
   }
 
   public function newGame(){
-
     array_push($this->bees, new QueenBee());
     for($i = 0; $i<5; $i++){
       array_push($this->bees, new WorkerBee());
