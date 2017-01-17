@@ -1,5 +1,6 @@
 html, body{
-  border : 0;
+  border : 0px;
+  margin : 0px;
 }
 
 body{
@@ -8,9 +9,15 @@ body{
   font-family: 'Roboto';
 }
 
+#header{
+  height : 100px;
+  background-color : #f39c12;
+  margin-bottom : 100px;
+}
+
 #beesWrapper{
   margin : auto;
-  max-width : 850px;
+  max-width : 1024px;
 }
 
 .healthContainer{
@@ -19,9 +26,8 @@ body{
   background-color: black;
 }
 .healthBar{
-  width : 50%;
   height : 100%;
-  background-color: red;
+  background-color : #f39c12;
 }
 
 .bee{

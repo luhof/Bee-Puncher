@@ -17,8 +17,11 @@ if (!isset($_SESSION['game']))
 		<link rel="stylesheet" href="style/main.css"/>
 	</head>
 	<body>
+		<div id="header">
+			<img src="assets/logo.png" alt="logo"/>
+		</div>
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-		<h1>BEE PUNCHER</h1>
+
 		<?php
 			$_SESSION['game']->playGame($_POST);
 		?>

@@ -92,7 +92,7 @@ class Game{
   }
 
   function resetGame(){
-    $this->console = "So you want to revive these bees just to punch them again. I won't judge though.";
+    $this->console = "So you want to revive these bees just to punch them to death again. Great. Have fun.";
     session_destroy();
     $this->bees = [];
     $this->isOver = false;
