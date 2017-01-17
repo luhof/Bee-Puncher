@@ -14,10 +14,11 @@ if (!isset($_SESSION['game']))
 <html>
 	<head>
 		<title>Bees !</title>
+		<link rel="stylesheet" href="style/main.css"/>
 	</head>
 	<body>
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-		<h1>Bees Bees Bees</h1>
+		<h1>BEE PUNCHER</h1>
 		<?php
 			$_SESSION['game']->playGame($_POST);
 		?>

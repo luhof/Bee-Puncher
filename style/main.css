@@ -1,0 +1,91 @@
+html, body{
+  border : 0;
+}
+
+body{
+  background-color: #ecf0f1;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+#beesWrapper{
+  margin : auto;
+  max-width : 850px;
+}
+
+.healthContainer{
+  width : 100%;
+  height : 5px;
+  background-color: black;
+}
+.healthBar{
+  width : 50%;
+  height : 100%;
+  background-color: red;
+}
+
+.bee{
+  float : left;
+  width : 150px;
+  margin : 0px 10px 10px 10px;
+
+}
+
+input{
+  text-transform: uppercase;
+  border : none;
+  background-color : #f39c12;
+  padding : 50px;
+  cursor : pointer;
+}
+
+@-webkit-keyframes wiggle {
+  10%, 90% {
+  transform: translate3d(-1px, 0, 0);
+}
+
+20%, 80% {
+  transform: translate3d(2px, 0, 0);
+}
+
+30%, 50%, 70% {
+  transform: translate3d(-4px, 0, 0);
+}
+
+40%, 60% {
+  transform: translate3d(4px, 0, 0);
+}
+}
+
+@keyframes wiggle {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+input {
+  -webkit-animation: none;
+          animation: none;
+  display: inline-block;
+
+}
+
+input:hover {
+  -webkit-animation: wiggle 0.5s infinite;
+          animation: wiggle 0.5s infinite;
+          transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

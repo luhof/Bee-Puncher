@@ -4,8 +4,8 @@
 
     protected $name = "worker";
     protected $baseHp = 75;
-    private $hp = 0;
-    private $damageTaken = 10;
+    protected $hp = 0;
+    protected $damageTaken = 10;
 
   }
 

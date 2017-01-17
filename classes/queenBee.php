@@ -4,8 +4,8 @@
 
     protected $name = "queen";
     protected $baseHp = 100;
-    private $hp = 1;
-    private $damageTaken = 8;
+    protected $hp = 1;
+    protected $damageTaken = 8;
 
   }
 

@@ -2,9 +2,10 @@
 
   class DroneBee extends Bee{
 
+    protected $name = "worker";
     protected $baseHp = 50;
-    private $hp = 0;
-    private $damageTaken = 12;
+    protected $hp = 0;
+    protected $damageTaken = 12;
 
   }
 
