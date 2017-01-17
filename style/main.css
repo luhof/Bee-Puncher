@@ -17,7 +17,7 @@ body{
 
 #beesWrapper{
   margin : auto;
-  max-width : 1024px;
+  max-width : 665px;
 }
 
 .healthContainer{
@@ -32,9 +32,13 @@ body{
 
 .bee{
   float : left;
-  width : 150px;
+  width : 75px;
   margin : 0px 10px 10px 10px;
 
+}
+
+.bee img{
+  max-width : 75px;
 }
 
 input{

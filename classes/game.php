@@ -12,12 +12,17 @@ class Game{
   private $isOver = false;
   private $console = "Welcome to the Bee game ! Punch Bees in the face to win";
 
+  //constructor, called once per session
   function Game(){
-      $this->bees = [];
-      $this->newGame();
+
+    $this->bees = [];
+    $this->newGame();
+
   }
 
+  //fills the array of bees
   public function newGame(){
+
     array_push($this->bees, new QueenBee());
     for($i = 0; $i<5; $i++){
       array_push($this->bees, new WorkerBee());
@@ -30,46 +35,45 @@ class Game{
     foreach ($this->bees as $bee) {
       $bee->init();
     }
+
   }
 
+  // echo HTML code and action button
   public function displayBees(){
 
     echo "<p>".$this->console."</p>";
-
     if(!$this->isOver){
-
       echo '<input type="submit" name="hit" value="Punch a bee in the face" /><br/>';
-
       echo "<p>There are still " . count($this->bees) . " bees left</p>";
       echo "<div id='beesWrapper'>";
-      foreach ($this->bees as $bee) {
-        echo "<div class='bee'><img src='assets/bee.png' alt='bee'/><br/>";
-        echo "<div class='healthContainer'><div class='healthBar' style='width:".$bee->getHp() * 100 / $bee->getBaseHp()."%'></div></div>";
-        echo $bee->getHp()."/".$bee->getBaseHp()."<br/></div>";
-      }
+        foreach ($this->bees as $bee) {
+          echo "<div class='bee'><img src='assets/".$bee->getName().".png' alt='bee'/><br/>";
+          echo "<div class='healthContainer'><div class='healthBar' style='width:".$bee->getHp() * 100 / $bee->getBaseHp()."%'></div></div>";
+          echo $bee->getHp()."/".$bee->getBaseHp()."<br/></div>";
+        }
       echo "</div>";
-
     }
     else{
       echo '<input type="submit" name="reset" value="reset" /><br/>';
     }
+
   }
 
-  function playGame($gamedata)
-  {
+  function playGame($gamedata){
+
     if (!$this->isOver && isset($gamedata['hit'])) {
       $this->hit($gamedata);
     }
-
     else if (isset($gamedata['reset'])) {
       $this->resetGame();
       $this->newGame();
     }
-
     $this->displayBees();
+
   }
 
   function hit($gamedata){
+
     $index = rand(0, count($this->bees)-1);
     $targetBee = $this->bees[$index];
     $targetBee->takeDamage();
@@ -89,18 +93,21 @@ class Game{
     if(empty($this->bees)){
       $this->isOver = true;
     }
+
   }
 
   function resetGame(){
+
     $this->console = "So you want to revive these bees just to punch them to death again. Great. Have fun.";
     session_destroy();
     $this->bees = [];
     $this->isOver = false;
     $_POST = array();
+
   }
 
 }
 
 
 
- ?>
+?>
